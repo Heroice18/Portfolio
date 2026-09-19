@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title th:text="${title}">Portfolio</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav container">
+            <div class="brand">Brandon</div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container hero">
+        <section>
+            <p class="eyebrow">Portfolio</p>
+            <h1>Hello, I’m Brandon.</h1>
+            <p class="lead">I build software, design interfaces, and create thoughtful digital experiences.</p>
+            <div class="cta-row">
+                <a class="btn primary" href="/about">Learn more</a>
+                <a class="btn secondary" href="mailto:hello@example.com">Contact</a>
+            </div>
+        </section>
+    </main>
+
+    <script th:src="@{/js/site.js}"></script>
+</body>
+</html>
