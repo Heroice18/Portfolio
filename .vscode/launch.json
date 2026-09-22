@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Portfolio (local)",
+            "request": "launch",
+            "mainClass": "com.example.portfolio.PortfolioApplication",
+            "vmArgs": "-Dspring.profiles.active=local",
+            "console": "integratedTerminal"
+        }
+    ]
+}

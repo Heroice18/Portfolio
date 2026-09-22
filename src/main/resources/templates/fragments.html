@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+    <header class="site-header" th:fragment="site-header">
+        <nav class="nav container" aria-label="Primary navigation">
+            <a class="brand" href="/">Brandon</a>
+            <div class="nav-links">
+                <a href="/" th:classappend="${page == 'Home'} ? ' active'">Home</a>
+                <a href="/about" th:classappend="${page == 'About'} ? ' active'">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <footer class="site-footer" th:fragment="site-footer">
+        <div class="container footer-content">
+            <span>Brandon</span>
+            <span>&copy; <span id="current-year">2026</span></span>
+        </div>
+    </footer>
+</body>
+</html>

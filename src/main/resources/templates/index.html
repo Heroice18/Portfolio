@@ -7,28 +7,46 @@
     <link rel="stylesheet" th:href="@{/css/styles.css}" />
 </head>
 <body>
-    <header class="site-header">
-        <nav class="nav container">
-            <div class="brand">Brandon</div>
-            <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="/about">About</a>
-            </div>
-        </nav>
-    </header>
+    <div class="site-shell">
+        <header th:replace="~{fragments :: site-header}"></header>
 
-    <main class="container hero">
-        <section>
-            <p class="eyebrow">Portfolio</p>
-            <h1>Hello, I’m Brandon.</h1>
-            <p class="lead">I build software, design interfaces, and create thoughtful digital experiences.</p>
-            <div class="cta-row">
-                <a class="btn primary" href="/about">Learn more</a>
-                <a class="btn secondary" href="mailto:hello@example.com">Contact</a>
-            </div>
-        </section>
-    </main>
+        <main class="page-content">
+            <section class="content-panel container hero">
+                <div>
+                    <p class="eyebrow">Portfolio</p>
+                    <h1>Hello, I’m Brandon.</h1>
+                    <p class="lead">I build software, design interfaces, and create thoughtful digital experiences.</p>
+                    <div class="cta-row">
+                        <a class="btn primary" href="/about">Learn more</a>
+                        <a class="btn secondary" href="#contact">Contact</a>
+                    </div>
+                </div>
+            </section>
 
+            <section class="content-panel container contact-panel" id="contact" aria-labelledby="contact-title">
+                <div class="contact-copy">
+                    <p class="eyebrow">Get in touch</p>
+                    <h2 id="contact-title">Start a conversation.</h2>
+                    <p>Send a message and I’ll get back to you as soon as possible.</p>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" maxlength="120" required />
+
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" maxlength="320" required />
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" maxlength="4000" required></textarea>
+
+                    <button class="btn primary" type="submit">Send message</button>
+                    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                </form>
+            </section>
+        </main>
+
+        <footer th:replace="~{fragments :: site-footer}"></footer>
+    </div>
     <script th:src="@{/js/site.js}"></script>
 </body>
 </html>

@@ -1,6 +1,9 @@
 target/
+data/
 .idea/
-.vscode/
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
 *.iml
 .DS_Store
 .mvn/wrapper/maven-wrapper.jar
