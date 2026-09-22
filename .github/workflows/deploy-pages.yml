@@ -31,6 +31,9 @@ jobs:
         run: |
           mkdir -p pages
           cp -R target/classes/static/* pages/
+          if [ -d target/classes/templates ]; then
+            cp -R target/classes/templates/* pages/
+          fi
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
