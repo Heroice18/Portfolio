@@ -1,0 +1,18 @@
+{
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-26",
+            "path": "C:\\Program Files\\Eclipse Adoptium\\jdk-26.0.2.101-hotspot",
+            "default": true
+        }
+    ]
+}{
+    "chat.tools.terminal.autoApprove": {
+        "/^mvn -v$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    },
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.updateBuildConfiguration": "automatic"
+}
