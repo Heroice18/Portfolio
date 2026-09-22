@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Portfolio locally",
+            "type": "shell",
+            "command": "${workspaceFolder}\\mvnw.cmd",
+            "options": {
+                "env": {
+                    "JAVA_HOME": "C:\\Program Files\\Eclipse Adoptium\\jdk-26.0.2.101-hotspot"
+                }
+            },
+            "args": [
+                "spring-boot:run",
+                "\"-Dspring-boot.run.profiles=local\""
+            ],
+            "problemMatcher": [],
+            "group": "build"
+        }
+    ]
+}

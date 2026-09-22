@@ -12,11 +12,12 @@
 
     <groupId>com.example</groupId>
     <artifactId>portfolio</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${revision}</version>
     <name>portfolio</name>
     <description>Portfolio website built with Spring Boot and ready to deploy to GitHub Pages</description>
 
     <properties>
+        <revision>0.0.1-SNAPSHOT</revision>
         <java.version>26</java.version>
         <maven.compiler.release>26</maven.compiler.release>
     </properties>

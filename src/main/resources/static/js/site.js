@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const year = new Date().getFullYear();
-    console.log('Portfolio loaded. Year:', year);
+    const yearElement = document.querySelector('#current-year');
+
+    if (yearElement) {
+        yearElement.textContent = year;
+    }
 });
