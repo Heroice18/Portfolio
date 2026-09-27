@@ -3,6 +3,7 @@ data/
 .idea/
 .vscode/*
 !.vscode/launch.json
+!.vscode/settings.json
 !.vscode/tasks.json
 *.iml
 .DS_Store

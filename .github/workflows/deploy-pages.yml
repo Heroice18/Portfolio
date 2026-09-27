@@ -3,6 +3,7 @@ name: Deploy Portfolio to GitHub Pages
 on:
   push:
     branches: [ main ]
+    tags: [ 'v*' ]
   workflow_dispatch:
 
 permissions:
@@ -24,8 +25,19 @@ jobs:
           distribution: temurin
           java-version: '26'
 
+      - name: Determine application version
+        id: version
+        shell: bash
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            VERSION="${GITHUB_REF_NAME#v}"
+          else
+            VERSION="0.0.1-SNAPSHOT"
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
       - name: Build app
-        run: mvn --batch-mode clean package
+        run: mvn --batch-mode clean package -Drevision=${{ steps.version.outputs.version }}
 
       - name: Prepare static Pages artifact
         run: |
