@@ -7,27 +7,24 @@
     <link rel="stylesheet" th:href="@{/css/styles.css}" />
 </head>
 <body>
-    <header class="site-header">
-        <nav class="nav container">
-            <div class="brand">Brandon</div>
-            <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="/about">About</a>
-            </div>
-        </nav>
-    </header>
+    <div class="site-shell">
+        <header th:replace="~{fragments :: site-header}"></header>
 
-    <main class="container content">
-        <h1>About Me</h1>
-        <p>
-            I’m a developer focused on practical software, clear communication, and polished user experiences.
-            This project is set up as a Spring Boot portfolio so it can be developed locally and published to GitHub Pages.
-        </p>
-        <p>
-            The site uses a Spring Boot backend, Thymeleaf templates, and static assets that can be packaged for GitHub Pages hosting.
-        </p>
-    </main>
+        <main class="page-content">
+            <section class="content-panel container content">
+                <h1>About Me</h1>
+                <p>
+                    I’m a developer focused on practical software, clear communication, and polished user experiences.
+                    This project is set up as a Spring Boot portfolio so it can be developed locally and published to GitHub Pages.
+                </p>
+                <p>
+                    The site uses a Spring Boot backend, Thymeleaf templates, and static assets that can be packaged for GitHub Pages hosting.
+                </p>
+            </section>
+        </main>
 
+        <footer th:replace="~{fragments :: site-footer}"></footer>
+    </div>
     <script th:src="@{/js/site.js}"></script>
 </body>
 </html>
