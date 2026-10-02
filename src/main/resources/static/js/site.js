@@ -6,6 +6,39 @@ document.addEventListener('DOMContentLoaded', () => {
         yearElement.textContent = year;
     }
 
+    const sliderElement = document.querySelector('.portfolio-swiper');
+    const sliderControls = document.querySelector('.slider-controls');
+
+    if (sliderElement && window.Swiper) {
+        new Swiper(sliderElement, {
+            effect: 'coverflow',
+            centeredSlides: true,
+            initialSlide: 1,
+            slidesPerView: 'auto',
+            grabCursor: true,
+            rewind: true,
+            keyboard: { enabled: true },
+            a11y: { enabled: true },
+            coverflowEffect: {
+                rotate: 24,
+                stretch: -8,
+                depth: 140,
+                modifier: 1,
+                slideShadows: false
+            },
+            navigation: {
+                nextEl: '.slider-next',
+                prevEl: '.slider-prev'
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            }
+        });
+
+        sliderControls.hidden = false;
+    }
+
     const contactForm = document.querySelector('#contact-form');
     const statusElement = document.querySelector('#form-status');
 

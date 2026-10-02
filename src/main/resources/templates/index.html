@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title th:text="${title}">Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.2.0/swiper-bundle.min.css" />
     <link rel="stylesheet" th:href="@{/css/styles.css}" />
 </head>
 <body>
@@ -11,16 +12,53 @@
         <header th:replace="~{fragments :: site-header}"></header>
 
         <main class="page-content">
-            <section class="content-panel container hero">
-                <div>
+            <section class="container hero" aria-labelledby="home-title">
+                <div class="hero-copy">
                     <p class="eyebrow">Portfolio</p>
-                    <h1>Hello, I’m Brandon.</h1>
+                    <h1 id="home-title">Hello, I’m Brandon.</h1>
                     <p class="lead">I build software, design interfaces, and create thoughtful digital experiences.</p>
-                    <div class="cta-row">
-                        <a class="btn primary" href="/about">Learn more</a>
-                        <a class="btn secondary" href="#contact">Contact</a>
+                </div>
+
+                <div class="portfolio-swiper swiper" aria-label="Explore the portfolio">
+                    <div class="swiper-wrapper">
+                        <article class="swiper-slide portfolio-card card-about">
+                            <span class="card-index">01 / 03</span>
+                            <div>
+                                <p class="eyebrow">The person behind the work</p>
+                                <h2>About Me</h2>
+                                <p>A little about my background, how I work, and what I care about building.</p>
+                            </div>
+                            <a class="card-link" href="/about">Get to know me <span aria-hidden="true">&rarr;</span></a>
+                        </article>
+                        <article class="swiper-slide portfolio-card card-work">
+                            <span class="card-index">02 / 03</span>
+                            <div>
+                                <p class="eyebrow">Ideas made tangible</p>
+                                <h2>My Work</h2>
+                                <p>Software, interfaces, and digital experiences shaped with care and purpose.</p>
+                            </div>
+                            <a class="card-link" href="#contact">Talk about a project <span aria-hidden="true">&rarr;</span></a>
+                        </article>
+                        <article class="swiper-slide portfolio-card card-contact">
+                            <span class="card-index">03 / 03</span>
+                            <div>
+                                <p class="eyebrow">Have something in mind?</p>
+                                <h2>Get in Touch</h2>
+                                <p>Have a question, an idea, or an opportunity? I’d be glad to hear from you.</p>
+                            </div>
+                            <a class="card-link" href="#contact">Start a conversation <span aria-hidden="true">&rarr;</span></a>
+                        </article>
                     </div>
-                    </div>
+                </div>
+
+                <div class="slider-controls" hidden>
+                    <button class="slider-arrow slider-prev" type="button" aria-label="Previous card">
+                        <span aria-hidden="true">&lsaquo;</span>
+                    </button>
+                    <div class="swiper-pagination" aria-label="Choose a card"></div>
+                    <button class="slider-arrow slider-next" type="button" aria-label="Next card">
+                        <span aria-hidden="true">&rsaquo;</span>
+                    </button>
                 </div>
             </section>
 
@@ -48,6 +86,7 @@
 
         <footer th:replace="~{fragments :: site-footer}"></footer>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.2.0/swiper-bundle.min.js"></script>
     <script th:src="@{/js/site.js}"></script>
 </body>
 </html>
