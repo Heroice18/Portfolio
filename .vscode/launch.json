@@ -6,6 +6,7 @@
             "name": "Portfolio (local)",
             "request": "launch",
             "mainClass": "com.example.portfolio.PortfolioApplication",
+            "preLaunchTask": "Stop Portfolio on port 8080",
             "vmArgs": "-Dspring.profiles.active=local",
             "console": "integratedTerminal"
         }
