@@ -20,12 +20,10 @@ public class SecurityConfig {
                                 "/js/**",
                                 "/swagger-ui.html",
                                 "/swagger-ui/**",
-                                "/v3/api-docs/**",
-                                "/api/contact"
+                                "/v3/api-docs/**"
                         ).permitAll()
                         .requestMatchers("/actuator/**").hasRole("ACTUATOR")
                         .anyRequest().permitAll())
-                .csrf(csrf -> csrf.ignoringRequestMatchers("/api/contact"))
                 .httpBasic(Customizer.withDefaults())
                 .formLogin(form -> form.disable());
 

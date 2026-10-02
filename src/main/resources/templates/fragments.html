@@ -17,5 +17,34 @@
             <span>&copy; <span id="current-year">2026</span></span>
         </div>
     </footer>
+
+    <section class="content-panel container linkedin-panel"
+             th:fragment="linkedin-carousel(title, posts, carouselId)"
+             th:if="${posts != null and !#lists.isEmpty(posts)}"
+             data-carousel
+             th:attr="aria-labelledby=|${carouselId}-title|">
+        <h2 th:id="|${carouselId}-title|" th:text="${title}">Latest from LinkedIn</h2>
+        <div class="linkedin-swiper swiper" aria-label="LinkedIn posts">
+            <div class="swiper-wrapper">
+                <article class="swiper-slide linkedin-post" th:each="post : ${posts}">
+                    <iframe
+                            th:src="${post.embedUrl}"
+                            title="LinkedIn post by Brandon Ison"
+                            th:height="${post.height}"
+                            allowfullscreen=""
+                            loading="lazy"></iframe>
+                </article>
+            </div>
+            <div class="slider-controls linkedin-slider-controls" th:if="${posts.size() > 1}" hidden>
+                <button class="slider-arrow slider-prev" type="button" aria-label="Previous LinkedIn post">
+                    <span aria-hidden="true">&lsaquo;</span>
+                </button>
+                <div class="swiper-pagination" aria-label="Choose a LinkedIn post"></div>
+                <button class="slider-arrow slider-next" type="button" aria-label="Next LinkedIn post">
+                    <span aria-hidden="true">&rsaquo;</span>
+                </button>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

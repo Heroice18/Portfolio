@@ -6,14 +6,21 @@ document.addEventListener('DOMContentLoaded', () => {
         yearElement.textContent = year;
     }
 
-    const sliderElement = document.querySelector('.portfolio-swiper');
-    const sliderControls = document.querySelector('.slider-controls');
+    const initializeCarousel = (carouselElement) => {
+        const sliderElement = carouselElement.querySelector('.swiper');
+        const sliderControls = carouselElement.querySelector('.slider-controls');
+        const previousButton = sliderControls?.querySelector('.slider-prev');
+        const nextButton = sliderControls?.querySelector('.slider-next');
+        const pagination = sliderControls?.querySelector('.swiper-pagination');
 
-    if (sliderElement && window.Swiper) {
-        new Swiper(sliderElement, {
+        if (!sliderElement || !window.Swiper) {
+            return;
+        }
+
+        const options = {
             effect: 'coverflow',
             centeredSlides: true,
-            initialSlide: 1,
+            initialSlide: 0,
             slidesPerView: 'auto',
             grabCursor: true,
             rewind: true,
@@ -25,51 +32,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 depth: 140,
                 modifier: 1,
                 slideShadows: false
-            },
-            navigation: {
-                nextEl: '.slider-next',
-                prevEl: '.slider-prev'
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true
             }
-        });
+        };
 
-        sliderControls.hidden = false;
-    }
-
-    const contactForm = document.querySelector('#contact-form');
-    const statusElement = document.querySelector('#form-status');
-
-    if (!contactForm || !statusElement) {
-        return;
-    }
-
-    contactForm.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        statusElement.className = 'form-status';
-        statusElement.textContent = 'Sending...';
-
-        const formData = new FormData(contactForm);
-        const payload = Object.fromEntries(formData.entries());
-
-        try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-
-            if (!response.ok) {
-                throw new Error('The message could not be sent.');
-            }
-
-            contactForm.reset();
-            statusElement.textContent = 'Thanks. Your message has been sent.';
-        } catch (error) {
-            statusElement.className = 'form-status error';
-            statusElement.textContent = error.message;
+        if (previousButton && nextButton) {
+            options.navigation = {
+                nextEl: nextButton,
+                prevEl: previousButton
+            };
         }
-    });
+
+        if (pagination) {
+            options.pagination = {
+                el: pagination,
+                clickable: true
+            };
+        }
+
+        new Swiper(sliderElement, options);
+
+        if (sliderControls) {
+            sliderControls.hidden = false;
+        }
+    };
+
+    document.querySelectorAll('[data-carousel]').forEach(initializeCarousel);
 });

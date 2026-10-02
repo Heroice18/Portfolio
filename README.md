@@ -23,9 +23,21 @@ The local profile is also available from VS Code:
 - Use **Run and Debug** and select `Portfolio (local)`.
 - Or run the `Run Portfolio locally` task from the Command Palette.
 
+In IntelliJ IDEA, select the shared **Portfolio (local)** run configuration to run or debug the application with the local profile.
+
 The local profile disables Thymeleaf caching and uses port `8080`, so template and style changes can be viewed by refreshing the browser.
 
 The included VS Code configuration targets the Temurin 26 JDK used by this project. If Java 26 is installed in a different location, update `.vscode/settings.json` and `.vscode/tasks.json` to match.
+
+## Reusable LinkedIn post carousel
+
+The LinkedIn carousel is a reusable Thymeleaf fragment. Add the post data to a page's model as `LinkedInPost` values, then include it where desired:
+
+```html
+<section th:replace="~{fragments :: linkedin-carousel('Latest from LinkedIn', ${linkedinPosts}, 'home-linkedin')}"></section>
+```
+
+Each carousel needs a unique ID for its accessible heading. The shared JavaScript initializes each carousel and scopes its controls independently.
 
 ## GitHub Pages deployment
 

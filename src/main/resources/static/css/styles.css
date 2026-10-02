@@ -77,6 +77,77 @@ body {
     box-shadow: 0 12px 0 rgba(22, 61, 96, 0.14);
 }
 
+.linkedin-panel {
+    margin-bottom: 2rem;
+    padding: 2rem;
+}
+
+.linkedin-panel h2 {
+    margin: 0 0 1.5rem;
+}
+
+.linkedin-swiper {
+    overflow-x: auto;
+    padding: 1rem 0 2rem;
+    perspective: 1200px;
+}
+
+.linkedin-swiper.swiper-initialized {
+    overflow: hidden;
+}
+
+.linkedin-swiper .swiper-slide {
+    width: min(86vw, 504px);
+    scroll-snap-align: center;
+}
+
+.linkedin-post {
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background: #ffffff;
+    box-shadow: 0 16px 22px rgba(22, 61, 96, 0.2);
+}
+
+.linkedin-post iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+}
+
+.linkedin-slider-controls {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: block;
+    pointer-events: none;
+}
+
+.linkedin-slider-controls .slider-arrow {
+    position: absolute;
+    top: 50%;
+    pointer-events: auto;
+    transform: translateY(-50%);
+}
+
+.linkedin-slider-controls .slider-prev {
+    left: 0.75rem;
+}
+
+.linkedin-slider-controls .slider-next {
+    right: 0.75rem;
+}
+
+.linkedin-slider-controls .swiper-pagination {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+    pointer-events: auto;
+}
+
 .hero {
     text-align: center;
     padding: 2.5rem 0 3rem;
@@ -121,11 +192,6 @@ body {
 
 .card-work {
     background: #e87919;
-}
-
-.card-contact {
-    background: #9852b4;
-    color: #ffffff;
 }
 
 .portfolio-card .eyebrow {
@@ -240,37 +306,6 @@ h1 {
     margin: 0 auto;
 }
 
-.cta-row {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-block;
-    padding: 0.9rem 1.5rem;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.btn:hover {
-    transform: translateY(-1px);
-}
-
-.btn.primary {
-    background: var(--header);
-    color: var(--text);
-}
-
-.btn.secondary {
-    border: 2px solid var(--text);
-    color: var(--text);
-}
-
 .content {
     max-width: 720px;
     padding: 4rem 3rem;
@@ -282,73 +317,6 @@ h1 {
 
 .content p {
     color: var(--text-dark);
-}
-
-.contact-panel {
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-    gap: 3rem;
-    padding: 3rem;
-    margin-bottom: 2rem;
-}
-
-.contact-copy h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.1;
-    margin: 0.25rem 0 1rem;
-}
-
-.contact-copy p:last-child {
-    color: var(--text-dark);
-}
-
-.contact-form {
-    display: grid;
-    gap: 0.55rem;
-}
-
-.contact-form label {
-    color: var(--text-dark);
-    font-weight: 700;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    border: 2px solid rgba(22, 61, 96, 0.28);
-    border-radius: 0.65rem;
-    background: rgba(255, 255, 255, 0.8);
-    color: var(--text-dark);
-    font: inherit;
-    padding: 0.75rem 0.85rem;
-    margin-bottom: 0.6rem;
-}
-
-.contact-form textarea {
-    resize: vertical;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: 3px solid rgba(47, 57, 169, 0.3);
-    border-color: var(--header);
-}
-
-.contact-form .btn {
-    border: 0;
-    cursor: pointer;
-    justify-self: start;
-}
-
-.form-status {
-    min-height: 1.6em;
-    margin: 0;
-    color: var(--text-dark);
-    font-weight: 700;
-}
-
-.form-status.error {
-    color: #8b1e3f;
 }
 
 .site-footer {
@@ -378,9 +346,12 @@ h1 {
     }
 
     .hero,
-    .content,
-    .contact-panel {
+    .content {
         padding: 3rem 1.5rem;
+    }
+
+    .linkedin-panel {
+        padding: 1.5rem;
     }
 
     .hero {
@@ -392,10 +363,6 @@ h1 {
         min-height: 320px;
     }
 
-    .contact-panel {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
 }
 
 @media (prefers-reduced-motion: reduce) {
