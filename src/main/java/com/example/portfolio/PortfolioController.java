@@ -29,4 +29,11 @@ public class PortfolioController {
         model.addAttribute("page", "About");
         return "about";
     }
+
+    @GetMapping("/work")
+    public String work(Model model) {
+        model.addAttribute("title", "My Work | Brandon");
+        model.addAttribute("page", "Work");
+        return "work";
+    }
 }

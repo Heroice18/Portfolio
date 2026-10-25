@@ -170,7 +170,7 @@ body {
 
 .portfolio-swiper .swiper-slide {
     width: min(76vw, 300px);
-    min-height: 340px;
+    min-height: 390px;
     scroll-snap-align: center;
 }
 
@@ -184,6 +184,37 @@ body {
     color: var(--text-dark);
     text-align: left;
     box-shadow: 0 16px 22px rgba(22, 61, 96, 0.2);
+}
+
+.card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.card-image {
+    display: grid;
+    flex: 0 0 5rem;
+    width: 5rem;
+    height: 5rem;
+    place-items: center;
+    overflow: hidden;
+    border: 2px solid rgba(22, 61, 96, 0.3);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.28);
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-image svg {
+    width: 2rem;
+    fill: currentColor;
+    opacity: 0.55;
 }
 
 .card-about {
@@ -319,6 +350,58 @@ h1 {
     color: var(--text-dark);
 }
 
+.work-page {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.work-intro,
+.work-section {
+    padding: 2rem 2.5rem;
+}
+
+.work-intro h1,
+.work-section h2 {
+    margin-top: 0;
+}
+
+.work-intro p:last-child,
+.work-section p:last-child {
+    margin-bottom: 0;
+    color: var(--text-dark);
+}
+
+.work-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+}
+
+.work-nav a {
+    border: 1px solid rgba(22, 61, 96, 0.35);
+    border-radius: 999px;
+    padding: 0.4rem 0.9rem;
+    color: var(--text-dark);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.work-nav a:hover,
+.work-nav a:focus-visible {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.work-nav a:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
+
+.work-section {
+    min-height: 220px;
+    scroll-margin-top: 1.5rem;
+}
+
 .site-footer {
     background: var(--footer);
     color: var(--text-dark);
@@ -354,13 +437,18 @@ h1 {
         padding: 1.5rem;
     }
 
+    .work-intro,
+    .work-section {
+        padding: 1.5rem;
+    }
+
     .hero {
         padding: 1.5rem 0 2rem;
     }
 
     .portfolio-swiper .swiper-slide {
         width: min(82vw, 300px);
-        min-height: 320px;
+        min-height: 370px;
     }
 
 }
