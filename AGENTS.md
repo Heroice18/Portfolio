@@ -46,6 +46,7 @@ There is no separate frontend package manager or JavaScript build. The project u
 - Existing content uses `.container` for width/alignment and `.content-panel` for the rounded panel treatment. The home page uses a `.hero`; secondary pages use `.content` or page-specific panel classes such as `.work-page` and `.work-section`.
 - CSS custom properties at the top of `styles.css` are the color palette. Extend them rather than scattering repeated color values when adding a reusable theme color.
 - The stylesheet's primary mobile breakpoint is `600px`. Preserve the existing responsive rules and reduced-motion handling when changing interactive or animated UI.
+- Design UI changes for both desktop and mobile from the outset. Check narrow phone widths as well as desktop; do not rely on accidental wrapping for navigation or other shared controls.
 - Swiper is loaded from a CDN in the home template; do not add Swiper initialization to static pages unless that page includes the library and carousel markup.
 
 ## Routes and security

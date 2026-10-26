@@ -19,6 +19,7 @@ Use this skill when the task adds a page, changes page structure, or wires a pag
 - Add the corresponding template under `src/main/resources/templates/`. Follow the existing document structure and use the shared `site-header` and `site-footer` fragments rather than duplicating them.
 - Keep the common shell consistent: `.site-shell`, shared header, `<main class="page-content">`, and shared footer. Prefer `.container` and `.content-panel` before inventing new layout primitives; inspect `styles.css` for existing responsive patterns and color variables.
 - Use semantic landmarks and heading order, descriptive link text, useful accessible names for controls, and responsive layouts consistent with existing content panels.
+- Design and verify every page and navigation change for both mobile and desktop. Check narrow phone widths for overflow, awkward wrapping, readability, and touch target spacing instead of treating mobile as an afterthought.
 - Reference local CSS and JavaScript with Thymeleaf resource expressions such as `@{/css/styles.css}` and `@{/js/site.js}`. Reuse existing behavior and styles where practical; synchronize template classes, CSS selectors, and JavaScript selectors when adding interactive UI.
 - Add or update navigation only when the page belongs in the site's global navigation. Keep active-state behavior consistent with the `page` model attribute.
 - Avoid adding a controller or client-side library when static markup or an existing shared fragment is sufficient.

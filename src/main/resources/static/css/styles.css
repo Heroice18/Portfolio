@@ -98,6 +98,11 @@ body {
     opacity: 1;
 }
 
+.nav-links a:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
+
 .page-content {
     flex: 1;
     padding: 2rem 0 3rem;
@@ -568,16 +573,6 @@ h1 {
 }
 
 @media (max-width: 600px) {
-    .nav {
-        flex-wrap: wrap;
-        min-height: 64px;
-        padding-block: 0.75rem;
-    }
-
-    .nav-links {
-        gap: 0.5rem 0.85rem;
-    }
-
     .footer-content {
         align-items: flex-start;
         flex-direction: column;
@@ -637,6 +632,46 @@ h1 {
         min-height: 370px;
     }
 
+}
+
+@media (max-width: 760px) {
+    .nav {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: stretch;
+        gap: 0.65rem;
+        padding-block: 0.75rem;
+    }
+
+    .brand {
+        gap: 0.6rem;
+        font-size: 1rem;
+    }
+
+    .brand img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-links {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.35rem;
+    }
+
+    .nav-links a {
+        padding: 0.4rem 0.2rem;
+        border-radius: 0.5rem;
+        font-size: 0.9rem;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        border-radius: 0.5rem;
+        background: rgba(255, 255, 255, 0.14);
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -24,6 +24,7 @@ Use this skill for feature work or fixes that may cross application layers.
 
 - For page work, use the `adding-portfolio-pages` skill.
 - For a UI interaction, trace its markup, CSS classes, JavaScript initialization, keyboard/accessibility behavior, and reduced-motion/responsive handling where relevant.
+- Optimize visual changes for both desktop and mobile from the start; verify responsive layouts at narrow and wide viewport sizes, especially for shared navigation and controls.
 - For a server route, inspect its model attributes, template resolution, authorization rules in `SecurityConfig.java`, and whether that route is also exported for GitHub Pages.
 - For shared site chrome, update the Thymeleaf fragments and verify each page that consumes them.
 - For configuration/security changes, preserve environment-based secrets and keep protected actuator endpoints protected.
