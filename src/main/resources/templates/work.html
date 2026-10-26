@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title th:text="${title}">My Work</title>
+    <title th:text="${title}">Experience</title>
     <link rel="stylesheet" th:href="@{/css/styles.css}" />
 </head>
 <body>
@@ -12,34 +12,16 @@
 
         <main class="page-content">
             <div class="container work-page">
-                <section class="content-panel work-intro" aria-labelledby="work-title">
-                    <p class="eyebrow">Selected work</p>
-                    <h1 id="work-title">My Work</h1>
-                    <p>Explore projects and other work. Use the links below to jump to a section.</p>
+                <section class="content-panel work-intro" aria-labelledby="experience-title">
+                    <p class="eyebrow">Professional background</p>
+                    <h1 id="experience-title">Experience</h1>
+                    <p>Explore relevant roles, collaborations, and milestones.</p>
                 </section>
 
-                <nav class="content-panel work-nav" aria-label="My work sections">
-                    <a href="#projects">Projects</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#other-work">Other Work</a>
-                </nav>
-
-                <section class="content-panel work-section" id="projects" aria-labelledby="projects-title">
+                <section class="content-panel work-section" aria-labelledby="roles-title">
                     <p class="eyebrow">01</p>
-                    <h2 id="projects-title">Projects</h2>
-                    <p>Add your featured projects here, including a short description, your role, and links.</p>
-                </section>
-
-                <section class="content-panel work-section" id="experience" aria-labelledby="experience-title">
-                    <p class="eyebrow">02</p>
-                    <h2 id="experience-title">Experience</h2>
+                    <h2 id="roles-title">Roles &amp; Experience</h2>
                     <p>Add relevant roles, collaborations, or milestones here.</p>
-                </section>
-
-                <section class="content-panel work-section" id="other-work" aria-labelledby="other-work-title">
-                    <p class="eyebrow">03</p>
-                    <h2 id="other-work-title">Other Work</h2>
-                    <p>Use this section for experiments, writing, talks, or anything else you would like to share.</p>
                 </section>
             </div>
         </main>

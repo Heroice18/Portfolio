@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title th:text="${title}">Technologies</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+    <div class="site-shell">
+        <header th:replace="~{fragments :: site-header}"></header>
+
+        <main class="page-content">
+            <div class="container work-page">
+                <section class="content-panel work-intro" aria-labelledby="technologies-title">
+                    <p class="eyebrow">Tools of the trade</p>
+                    <h1 id="technologies-title">Technologies</h1>
+                    <p>Listed from most used to least used.</p>
+                </section>
+
+                <section class="content-panel work-section" aria-label="Technologies ranked by usage">
+                    <ol class="technology-list">
+                        <li><strong>Java</strong><span>My primary language for application development.</span></li>
+                        <li><strong>Spring Boot</strong><span>Building Java web applications and services.</span></li>
+                        <li><strong>Node.js</strong><span>JavaScript runtime for application development.</span></li>
+                        <li><strong>JavaScript / TypeScript</strong><span>Building interactive web experiences and application logic.</span></li>
+                        <li><strong>Kotlin</strong><span>Developing Android applications.</span></li>
+                        <li><strong>Python</strong><span>Automation and scripting.</span></li>
+                        <li><strong>HTML / CSS</strong><span>Structuring and styling web interfaces.</span></li>
+                        <li><strong>Thymeleaf</strong><span>Rendering server-side HTML templates.</span></li>
+                    </ol>
+                </section>
+            </div>
+        </main>
+
+        <footer th:replace="~{fragments :: site-footer}"></footer>
+    </div>
+    <script th:src="@{/js/site.js}"></script>
+</body>
+</html>

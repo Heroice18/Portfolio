@@ -33,7 +33,7 @@ There is no separate frontend package manager or JavaScript build. The project u
 
 ## Request and rendering flow
 
-- `PortfolioController` handles `GET /`, `GET /about`, and `GET /work`, sets the page title/navigation marker, and returns the matching Thymeleaf template.
+- `PortfolioController` handles `GET /`, `GET /about`, `GET /work`, `GET /projects`, and `GET /technologies`, sets the page title/navigation marker, and returns the matching Thymeleaf template.
 - The home route also supplies a static list of `LinkedInPost` records. The `linkedin-carousel` fragment renders that data and is omitted when the list is null or empty.
 - `fragments.html` owns the shared navigation and footer; update it rather than copying shared markup into individual pages.
 - `site.js` initializes every `[data-carousel]` independently using the externally hosted Swiper library. Carousel markup and its CSS classes are coupled; check all three template, CSS, and JS surfaces when changing carousel behavior.
@@ -54,7 +54,9 @@ There is no separate frontend package manager or JavaScript build. The project u
 | --- | --- |
 | `/` | Home page, `index.html` |
 | `/about` | About page, `about.html` |
-| `/work` | Work page, `work.html` |
+| `/work` | Experience page, `work.html` |
+| `/projects` | Personal projects and other work, `projects.html` |
+| `/technologies` | Technologies ranked by usage, `technologies.html` |
 | `/swagger-ui.html`, `/swagger-ui/**`, `/v3/api-docs/**` | OpenAPI UI and documents |
 | `/actuator/**` | Requires the `ACTUATOR` role |
 
@@ -84,7 +86,7 @@ There are currently no test source files under `src/test`. Run the package build
 
 The Pages workflow runs on pushes to `main`, version tags (`v*`), or manual dispatch. It builds the jar, starts the app temporarily, saves rendered pages in a `pages` directory, copies `target/classes/static`, rewrites root-relative links for static hosting, and deploys the artifact.
 
-The current workflow exports only `/` as `index.html` and `/about` as `about.html`. Although `/work` exists in the application and navigation, the workflow does not currently render `work.html`; do not assume that page is available on the deployed static site. When adding or changing a page, consider both the Spring route and the workflow's explicit export/URL-rewrite steps.
+The workflow exports `/`, `/about`, `/work`, `/projects`, and `/technologies` as static HTML pages and rewrites their navigation links for Pages hosting. When adding or changing a page, consider both the Spring route and the workflow's explicit export/URL-rewrite steps.
 
 ## Change guidance
 

@@ -12,18 +12,26 @@
         <header th:replace="~{fragments :: site-header}"></header>
 
         <main class="page-content">
-            <section class="container hero" data-carousel aria-labelledby="home-title">
-                <div class="hero-copy">
-                    <p class="eyebrow">Portfolio</p>
-                    <h1 id="home-title">Hello, I’m Brandon.</h1>
-                    <p class="lead">I build software, design interfaces, and create thoughtful digital experiences.</p>
+            <section class="container hero"
+                     data-carousel
+                     data-autoplay-delay="2000"
+                     data-transition-speed="1400"
+                     aria-labelledby="home-title">
+                <div class="hero-intro">
+                    <img class="hero-portrait" th:src="@{/images/headshot.jpg}" alt="Brandon smiling outdoors." />
+                    <div class="hero-copy">
+                        <p class="eyebrow">Portfolio</p>
+                        <h1 id="home-title">Hello, I’m Brandon.</h1>
+                        <p class="lead">I build software, design interfaces, and create thoughtful digital experiences.</p>
+                    </div>
                 </div>
 
-                <div class="portfolio-swiper swiper" aria-label="Explore the portfolio">
+                <div class="portfolio-swiper swiper"
+                     aria-label="Explore the portfolio">
                     <div class="swiper-wrapper">
                         <article class="swiper-slide portfolio-card card-about">
                             <div class="card-header">
-                                <span class="card-index">01 / 02</span>
+                                <span class="card-index">01 / 04</span>
                                 <div class="card-image" aria-hidden="true">
                                     <svg viewBox="0 0 24 24" focusable="false">
                                         <path d="M4 5.5h16a1.5 1.5 0 0 1 1.5 1.5v10a1.5 1.5 0 0 1-1.5 1.5H4A1.5 1.5 0 0 1 2.5 17V7A1.5 1.5 0 0 1 4 5.5Zm0 2v8.8l4.2-4.2a1 1 0 0 1 1.4 0l2.2 2.2 2.8-2.8a1 1 0 0 1 1.4 0l3.5 3.5V7.5H4Zm4-0.2a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4Z"/>
@@ -39,7 +47,23 @@
                         </article>
                         <article class="swiper-slide portfolio-card card-work">
                             <div class="card-header">
-                                <span class="card-index">02 / 02</span>
+                                <span class="card-index">02 / 04</span>
+                                <div class="card-image" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" focusable="false">
+                                        <path d="M4 5.5h16a1.5 1.5 0 0 1 1.5 1.5v10a1.5 1.5 0 0 1-1.5 1.5H4A1.5 1.5 0 0 1 2.5 17V7A1.5 1.5 0 0 1 4 5.5Zm0 2v8.8l4.2-4.2a1 1 0 0 1 1.4 0l2.2 2.2 2.8-2.8a1 1 0 0 1 1.4 0l3.5 3.5V7.5H4Zm4-0.2a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4Z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="eyebrow">Professional background</p>
+                                <h2>Experience</h2>
+                                <p>Explore my professional roles, collaborations, and milestones.</p>
+                            </div>
+                            <a class="card-link" href="/work">View my experience <span aria-hidden="true">&rarr;</span></a>
+                        </article>
+                        <article class="swiper-slide portfolio-card card-projects">
+                            <div class="card-header">
+                                <span class="card-index">03 / 04</span>
                                 <div class="card-image" aria-hidden="true">
                                     <svg viewBox="0 0 24 24" focusable="false">
                                         <path d="M4 5.5h16a1.5 1.5 0 0 1 1.5 1.5v10a1.5 1.5 0 0 1-1.5 1.5H4A1.5 1.5 0 0 1 2.5 17V7A1.5 1.5 0 0 1 4 5.5Zm0 2v8.8l4.2-4.2a1 1 0 0 1 1.4 0l2.2 2.2 2.8-2.8a1 1 0 0 1 1.4 0l3.5 3.5V7.5H4Zm4-0.2a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4Z"/>
@@ -48,10 +72,26 @@
                             </div>
                             <div>
                                 <p class="eyebrow">Ideas made tangible</p>
-                                <h2>My Work</h2>
-                                <p>Software, interfaces, and digital experiences shaped with care and purpose.</p>
+                                <h2>Projects</h2>
+                                <p>Personal projects, experiments, and other work.</p>
                             </div>
-                            <a class="card-link" href="/work">Explore my work <span aria-hidden="true">&rarr;</span></a>
+                            <a class="card-link" href="/projects">Explore my projects <span aria-hidden="true">&rarr;</span></a>
+                        </article>
+                        <article class="swiper-slide portfolio-card card-technologies">
+                            <div class="card-header">
+                                <span class="card-index">04 / 04</span>
+                                <div class="card-image" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" focusable="false">
+                                        <path d="M4 5.5h16a1.5 1.5 0 0 1 1.5 1.5v10a1.5 1.5 0 0 1-1.5 1.5H4A1.5 1.5 0 0 1 2.5 17V7A1.5 1.5 0 0 1 4 5.5Zm0 2v8.8l4.2-4.2a1 1 0 0 1 1.4 0l2.2 2.2 2.8-2.8a1 1 0 0 1 1.4 0l3.5 3.5V7.5H4Zm4-0.2a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4Z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="eyebrow">Tools of the trade</p>
+                                <h2>Technologies</h2>
+                                <p>The languages and tools I use, ranked by experience.</p>
+                            </div>
+                            <a class="card-link" href="/technologies">See my technologies <span aria-hidden="true">&rarr;</span></a>
                         </article>
                     </div>
                 </div>

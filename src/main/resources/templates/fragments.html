@@ -3,11 +3,16 @@
 <body>
     <header class="site-header" th:fragment="site-header">
         <nav class="nav container" aria-label="Primary navigation">
-            <a class="brand" href="/">Brandon</a>
+            <a class="brand" href="/">
+                <img th:src="@{/images/headshot-small.jpg}" alt="" />
+                <span>My Portfolio | Brandon</span>
+            </a>
             <div class="nav-links">
                 <a href="/" th:classappend="${page == 'Home'} ? ' active'">Home</a>
                 <a href="/about" th:classappend="${page == 'About'} ? ' active'">About</a>
-                <a href="/work" th:classappend="${page == 'Work'} ? ' active'">My Work</a>
+                <a href="/work" th:classappend="${page == 'Work'} ? ' active'">Experience</a>
+                <a href="/projects" th:classappend="${page == 'Projects'} ? ' active'">Projects</a>
+                <a href="/technologies" th:classappend="${page == 'Technologies'} ? ' active'">Technologies</a>
             </div>
         </nav>
     </header>
@@ -23,6 +28,8 @@
              th:fragment="linkedin-carousel(title, posts, carouselId)"
              th:if="${posts != null and !#lists.isEmpty(posts)}"
              data-carousel
+             data-autoplay-delay="5000"
+             data-transition-speed="1400"
              th:attr="aria-labelledby=|${carouselId}-title|">
         <h2 th:id="|${carouselId}-title|" th:text="${title}">Latest from LinkedIn</h2>
         <div class="linkedin-swiper swiper" aria-label="LinkedIn posts">

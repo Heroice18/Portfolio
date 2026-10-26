@@ -61,12 +61,19 @@ jobs:
             exit 1
           fi
           curl --fail --silent --show-error http://127.0.0.1:8080/about -o pages/about.html
+          curl --fail --silent --show-error http://127.0.0.1:8080/work -o pages/work.html
+          curl --fail --silent --show-error http://127.0.0.1:8080/projects -o pages/projects.html
+          curl --fail --silent --show-error http://127.0.0.1:8080/technologies -o pages/technologies.html
           cp -R target/classes/static/. pages/
 
-          for page in pages/index.html pages/about.html; do
+          for page in pages/index.html pages/about.html pages/work.html pages/projects.html pages/technologies.html; do
             sed -i \
               -e 's|href="/about"|href="./about.html"|g' \
+              -e 's|href="/work"|href="./work.html"|g' \
+              -e 's|href="/projects"|href="./projects.html"|g' \
+              -e 's|href="/technologies"|href="./technologies.html"|g' \
               -e 's|href="/"|href="./index.html"|g' \
+              -e 's|src="/images/|src="./images/|g' \
               -e 's|href="/css/|href="./css/|g' \
               -e 's|src="/js/|src="./js/|g' \
               "$page"

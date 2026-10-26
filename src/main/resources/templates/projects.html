@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title th:text="${title}">Projects</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+    <div class="site-shell">
+        <header th:replace="~{fragments :: site-header}"></header>
+
+        <main class="page-content">
+            <div class="container work-page">
+                <section class="content-panel work-intro" aria-labelledby="projects-title">
+                    <p class="eyebrow">Selected work</p>
+                    <h1 id="projects-title">Projects &amp; Other Work</h1>
+                    <p>Personal projects, experiments, and other things I have created.</p>
+                </section>
+
+                <section class="content-panel work-section" aria-labelledby="personal-projects-title">
+                    <p class="eyebrow">01</p>
+                    <h2 id="personal-projects-title">Personal Projects</h2>
+                    <div class="project-grid">
+                        <article class="project-card">
+                            <p class="project-tech">Web application</p>
+                            <h3>Your-Story</h3>
+                            <p>A story-driven web application for creating and exploring stories.</p>
+                            <a href="https://github.com/Heroice18/Your-Story">View Your-Story on GitHub</a>
+                        </article>
+                        <article class="project-card">
+                            <p class="project-tech">Kotlin / Android</p>
+                            <h3>TAG-Andoid</h3>
+                            <p>An Android geo-tagging application.</p>
+                            <a href="https://github.com/Heroice18/TAG-Andoid">View TAG-Andoid on GitHub</a>
+                        </article>
+                        <article class="project-card">
+                            <p class="project-tech">Java</p>
+                            <h3>Wrestling-Plus</h3>
+                            <p>A Java project built with Gradle.</p>
+                            <a href="https://github.com/Heroice18/Wrestling-Plus">View Wrestling-Plus on GitHub</a>
+                        </article>
+                        <article class="project-card">
+                            <p class="project-tech">Python</p>
+                            <h3>shinyAutomation</h3>
+                            <p>A Python automation project.</p>
+                            <a href="https://github.com/Heroice18/shinyAutomation">View shinyAutomation on GitHub</a>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="content-panel work-section" aria-labelledby="other-work-title">
+                    <p class="eyebrow">02</p>
+                    <h2 id="other-work-title">Other Work</h2>
+                    <p>Use this section for experiments, writing, talks, or anything else you would like to share.</p>
+                </section>
+            </div>
+        </main>
+
+        <footer th:replace="~{fragments :: site-footer}"></footer>
+    </div>
+    <script th:src="@{/js/site.js}"></script>
+</body>
+</html>

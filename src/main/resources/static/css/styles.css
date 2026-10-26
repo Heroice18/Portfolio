@@ -39,9 +39,13 @@ body {
     align-items: center;
     justify-content: space-between;
     min-height: 72px;
+    gap: 1rem;
 }
 
 .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
     color: var(--text);
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -49,8 +53,23 @@ body {
     text-decoration: none;
 }
 
+.brand img {
+    width: 48px;
+    height: 48px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 28%;
+}
+
+.brand:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 4px;
+}
+
 .nav-links {
     display: flex;
+    flex-wrap: wrap;
     gap: 1.25rem;
 }
 
@@ -153,9 +172,28 @@ body {
     padding: 2.5rem 0 3rem;
 }
 
+.hero-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-portrait {
+    flex: 0 0 auto;
+    width: 220px;
+    height: 260px;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    border-radius: 1.5rem;
+    object-fit: cover;
+    object-position: center 28%;
+    box-shadow: 0 16px 22px rgba(22, 61, 96, 0.2);
+}
+
 .hero-copy {
     max-width: 720px;
-    margin: 0 auto 1.5rem;
+    text-align: left;
 }
 
 .portfolio-swiper {
@@ -223,6 +261,14 @@ body {
 
 .card-work {
     background: #e87919;
+}
+
+.card-projects {
+    background: #5277d1;
+}
+
+.card-technologies {
+    background: #b55bb9;
 }
 
 .portfolio-card .eyebrow {
@@ -371,35 +417,94 @@ h1 {
     color: var(--text-dark);
 }
 
-.work-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    padding: 1rem 1.25rem;
+.work-section {
+    min-height: 220px;
+    scroll-margin-top: 1.5rem;
 }
 
-.work-nav a {
-    border: 1px solid rgba(22, 61, 96, 0.35);
-    border-radius: 999px;
-    padding: 0.4rem 0.9rem;
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+    border: 1px solid rgba(22, 61, 96, 0.25);
+    border-radius: 1.25rem;
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.project-card h3 {
+    margin: 0 0 0.5rem;
+    color: var(--text-dark);
+}
+
+.project-card p:not(.project-tech) {
+    margin: 0 0 1rem;
+    color: var(--text-dark);
+}
+
+.project-card .project-tech {
+    margin: 0 0 0.5rem;
+    color: var(--text-dark);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.project-card a {
+    margin-top: auto;
     color: var(--text-dark);
     font-weight: 700;
-    text-decoration: none;
+    text-underline-offset: 0.2em;
 }
 
-.work-nav a:hover,
-.work-nav a:focus-visible {
-    background: rgba(255, 255, 255, 0.25);
-}
-
-.work-nav a:focus-visible {
+.project-card a:focus-visible {
     outline: 3px solid #ffffff;
     outline-offset: 3px;
 }
 
-.work-section {
-    min-height: 220px;
-    scroll-margin-top: 1.5rem;
+.technology-list {
+    display: grid;
+    gap: 0.75rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: technology;
+}
+
+.technology-list li {
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr);
+    column-gap: 0.75rem;
+    align-items: baseline;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(22, 61, 96, 0.25);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.14);
+    counter-increment: technology;
+}
+
+.technology-list li::before {
+    grid-row: span 2;
+    color: var(--text-dark);
+    font-weight: 700;
+    content: counter(technology, decimal-leading-zero);
+}
+
+.technology-list strong {
+    color: var(--text-dark);
+}
+
+.technology-list span {
+    grid-column: 2;
+    color: var(--text-dark);
 }
 
 .site-footer {
@@ -417,7 +522,13 @@ h1 {
 
 @media (max-width: 600px) {
     .nav {
+        flex-wrap: wrap;
         min-height: 64px;
+        padding-block: 0.75rem;
+    }
+
+    .nav-links {
+        gap: 0.5rem 0.85rem;
     }
 
     .page-content {
@@ -444,6 +555,20 @@ h1 {
 
     .hero {
         padding: 1.5rem 0 2rem;
+    }
+
+    .hero-intro {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .hero-portrait {
+        width: 160px;
+        height: 190px;
+    }
+
+    .hero-copy {
+        text-align: center;
     }
 
     .portfolio-swiper .swiper-slide {

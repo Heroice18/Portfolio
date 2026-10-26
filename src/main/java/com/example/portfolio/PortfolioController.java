@@ -17,7 +17,7 @@ public class PortfolioController {
 
     @GetMapping("/")
     public String home(Model model) {
-        model.addAttribute("title", "Brandon");
+        model.addAttribute("title", "My Portfolio | Brandon");
         model.addAttribute("page", "Home");
         model.addAttribute("linkedinPosts", LINKEDIN_POSTS);
         return "index";
@@ -32,8 +32,22 @@ public class PortfolioController {
 
     @GetMapping("/work")
     public String work(Model model) {
-        model.addAttribute("title", "My Work | Brandon");
+        model.addAttribute("title", "Experience | Brandon");
         model.addAttribute("page", "Work");
         return "work";
+    }
+
+    @GetMapping("/projects")
+    public String projects(Model model) {
+        model.addAttribute("title", "Projects | Brandon");
+        model.addAttribute("page", "Projects");
+        return "projects";
+    }
+
+    @GetMapping("/technologies")
+    public String technologies(Model model) {
+        model.addAttribute("title", "Technologies | Brandon");
+        model.addAttribute("page", "Technologies");
+        return "technologies";
     }
 }
