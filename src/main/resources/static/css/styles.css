@@ -19,7 +19,20 @@ body {
     line-height: 1.6;
 }
 
+.caustics-canvas {
+    position: fixed;
+    z-index: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    mix-blend-mode: screen;
+    pointer-events: none;
+}
+
 .site-shell {
+    position: relative;
+    z-index: 1;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -103,6 +116,17 @@ body {
 
 .linkedin-panel h2 {
     margin: 0 0 1.5rem;
+}
+
+.linkedin-panel h2 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.linkedin-panel h2 a:hover,
+.linkedin-panel h2 a:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
 }
 
 .linkedin-swiper {
@@ -513,11 +537,34 @@ h1 {
 }
 
 .footer-content {
-    min-height: 72px;
+    min-height: 92px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1.5rem;
     font-weight: 700;
+}
+
+.footer-contact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1.25rem;
+    padding-block: 1rem;
+}
+
+.footer-contact a {
+    color: inherit;
+    text-underline-offset: 0.2em;
+}
+
+.footer-contact a:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 3px;
+}
+
+.footer-copyright {
+    flex: 0 0 auto;
 }
 
 @media (max-width: 600px) {
@@ -529,6 +576,20 @@ h1 {
 
     .nav-links {
         gap: 0.5rem 0.85rem;
+    }
+
+    .footer-content {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0;
+        padding-block: 0.75rem;
+    }
+
+    .footer-contact {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.35rem;
+        padding-block: 0.5rem;
     }
 
     .page-content {

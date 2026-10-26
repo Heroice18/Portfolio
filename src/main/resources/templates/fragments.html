@@ -19,8 +19,13 @@
 
     <footer class="site-footer" th:fragment="site-footer">
         <div class="container footer-content">
-            <span>Brandon</span>
-            <span>&copy; <span id="current-year">2026</span></span>
+            <div class="footer-contact">
+                <span class="footer-name">Brandon</span>
+                <a href="mailto:heroice18@gmail.com">heroice18@gmail.com</a>
+                <a href="https://www.linkedin.com/in/brandon-ison/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <span>Greater Phoenix, Arizona</span>
+            </div>
+            <span class="footer-copyright">&copy; <span id="current-year">2026</span></span>
         </div>
     </footer>
 
@@ -31,7 +36,10 @@
              data-autoplay-delay="5000"
              data-transition-speed="1400"
              th:attr="aria-labelledby=|${carouselId}-title|">
-        <h2 th:id="|${carouselId}-title|" th:text="${title}">Latest from LinkedIn</h2>
+        <h2 th:id="|${carouselId}-title|">
+            <a href="https://www.linkedin.com/in/brandon-ison/" target="_blank" rel="noopener noreferrer"
+               th:text="${title}">From My LinkedIn</a>
+        </h2>
         <div class="linkedin-swiper swiper" aria-label="LinkedIn posts">
             <div class="swiper-wrapper">
                 <article class="swiper-slide linkedin-post" th:each="post : ${posts}">
