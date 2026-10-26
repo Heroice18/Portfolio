@@ -20,7 +20,7 @@
     <footer class="site-footer" th:fragment="site-footer">
         <div class="container footer-content">
             <div class="footer-contact">
-                <span class="footer-name">Brandon</span>
+                <span class="footer-name">Brandon Ison</span>
                 <a href="mailto:heroice18@gmail.com">heroice18@gmail.com</a>
                 <a href="https://www.linkedin.com/in/brandon-ison/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <span>Greater Phoenix, Arizona</span>
@@ -33,8 +33,6 @@
              th:fragment="linkedin-carousel(title, posts, carouselId)"
              th:if="${posts != null and !#lists.isEmpty(posts)}"
              data-carousel
-             data-autoplay-delay="5000"
-             data-transition-speed="1400"
              th:attr="aria-labelledby=|${carouselId}-title|">
         <h2 th:id="|${carouselId}-title|">
             <a href="https://www.linkedin.com/in/brandon-ison/" target="_blank" rel="noopener noreferrer"

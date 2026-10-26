@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const carouselAutoplayDelay = 2000;
+    const carouselTransitionSpeed = 1400;
     const year = new Date().getFullYear();
     const yearElement = document.querySelector('#current-year');
 
@@ -185,9 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-        const autoplayDelay = Number(carouselElement.dataset.autoplayDelay);
-        const transitionSpeed = Number(carouselElement.dataset.transitionSpeed);
-        const hasAutoplay = Number.isFinite(autoplayDelay) && autoplayDelay > 0;
+        const hasAutoplay = carouselAutoplayDelay > 0;
         const options = {
             effect: 'coverflow',
             centeredSlides: true,
@@ -207,9 +207,9 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         if (hasAutoplay) {
-            options.speed = Number.isFinite(transitionSpeed) && transitionSpeed > 0 ? transitionSpeed : 600;
+            options.speed = carouselTransitionSpeed;
             options.autoplay = {
-                delay: autoplayDelay,
+                delay: carouselAutoplayDelay,
                 disableOnInteraction: false,
                 enabled: !reducedMotion.matches,
                 pauseOnMouseEnter: true
