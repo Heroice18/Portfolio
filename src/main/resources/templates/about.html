@@ -11,50 +11,14 @@
         <header th:replace="~{fragments :: site-header}"></header>
 
         <main class="page-content">
-            <section class="content-panel container about-content">
-                <img class="about-photo" th:src="@{/images/about-family.jpg}" alt="Brandon with his family outdoors." />
-                <div class="about-copy">
-                    <h1>About Me</h1>
-                    <p>
-                        Hiya! My name is Brandon Ison. I'm a senior software engineer, father, and leader and I love my life I've built for myself.
-                        I can't wait to learn more about you, in the meantime, here some fun facts about me!
-                    </p>
-                </div>
-            </section>
+            <section th:replace="~{fragments :: page-feature(${pageFeature})}"></section>
 
-            <section class="container about-stories" aria-labelledby="about-stories-title">
-                <div class="about-story-list">
-                    <article class="about-story content-panel">
-                        <div class="about-story-media">
-                            <img class="story-card-image" th:src="@{/images/about-married.jpg}"
-                                 alt="Temple grounds at sunset." />
-                        </div>
-                        <div class="about-story-copy">
-                            <h3 class="story-card-title">Family</h3>
-                            <p class="story-card-text">I've been married to my wife for over 5 years.</p>
-                        </div>
-                    </article>
-
-                    <article class="about-story about-story--reverse content-panel">
-                        <div class="about-story-media">
-                            <img class="story-card-image" th:src="@{/images/about-community.jpg}"
-                                 alt="Pokemon GO players gathered at a stadium event." />
-                        </div>
-                        <div class="about-story-copy">
-                            <h3 class="story-card-title">Community</h3>
-                            <p class="story-card-text">More fun facts coming soon.</p>
-                        </div>
-                    </article>
-
-                    <article class="about-story content-panel">
-                        <div class="about-story-media">
-                            <span class="story-card-placeholder">More photos coming soon</span>
-                        </div>
-                        <div class="about-story-copy">
-                            <h3 class="story-card-title">Hobbies</h3>
-                            <p class="story-card-text">More fun facts coming soon.</p>
-                        </div>
-                    </article>
+            <section class="container cascade-section" aria-label="About me stories">
+                <h2 class="cascade-section-title">Learn about me!</h2>
+                <div class="cascade-list">
+                    <th:block th:each="card : ${cascadeCards}">
+                        <article th:replace="~{fragments :: cascade-card(${card})}"></article>
+                    </th:block>
                 </div>
             </section>
         </main>

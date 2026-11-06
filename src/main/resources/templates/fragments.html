@@ -29,6 +29,42 @@
         </div>
     </footer>
 
+    <section class="content-panel container page-feature"
+             th:fragment="page-feature(feature)"
+             aria-label="Page introduction">
+        <img class="page-feature-image" th:src="@{${feature.image}}" th:alt="${feature.imageAlt}" />
+        <div class="page-feature-copy">
+            <p class="eyebrow" th:if="${!#strings.isEmpty(feature.eyebrow)}" th:text="${feature.eyebrow}"></p>
+            <h1 th:text="${feature.heading}">Page title</h1>
+            <p th:text="${feature.description}">Page introduction.</p>
+        </div>
+    </section>
+
+    <article class="cascade-card content-panel"
+             th:fragment="cascade-card(card)"
+             th:classappend="${card.reverse} ? ' cascade-card--reverse'">
+        <div class="cascade-card-media">
+            <img class="cascade-card-image"
+                 th:if="${!#strings.isEmpty(card.image)}"
+                 th:src="@{${card.image}}"
+                 th:alt="${card.imageAlt}" />
+            <span class="cascade-card-placeholder"
+                  th:unless="${!#strings.isEmpty(card.image)}"
+                  th:text="${card.category}">Project category</span>
+        </div>
+        <div class="cascade-card-copy">
+            <p class="eyebrow" th:if="${!#strings.isEmpty(card.category) and !#strings.isEmpty(card.image)}"
+               th:text="${card.category}">Category</p>
+            <h3 th:text="${card.heading}">Card title</h3>
+            <p th:text="${card.description}">Card description.</p>
+            <a th:if="${!#strings.isEmpty(card.link)}"
+               th:href="${card.link}"
+               target="_blank"
+               rel="noopener noreferrer"
+               th:text="${card.linkText}">View project</a>
+        </div>
+    </article>
+
     <section class="content-panel container linkedin-panel"
              th:fragment="linkedin-carousel(title, posts, carouselId)"
              th:if="${posts != null and !#lists.isEmpty(posts)}"

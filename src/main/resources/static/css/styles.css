@@ -417,7 +417,7 @@ h1 {
     padding: 4rem 3rem;
 }
 
-.about-content {
+.page-feature {
     display: grid;
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
     align-items: center;
@@ -426,7 +426,7 @@ h1 {
     padding: 3rem;
 }
 
-.about-photo {
+.page-feature-image {
     display: block;
     width: 100%;
     max-height: 480px;
@@ -434,17 +434,34 @@ h1 {
     object-fit: cover;
 }
 
-.about-stories {
+.page-feature-copy {
+    min-width: 0;
+}
+
+.page-feature-copy h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.page-feature-copy p:last-child {
+    margin-bottom: 0;
+    color: var(--text-dark);
+}
+
+.cascade-section {
     margin-top: 2rem;
 }
 
-.about-story-list {
+.cascade-section-title {
+    margin: 0 0 1rem;
+}
+
+.cascade-list {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
 }
 
-.about-story {
+.cascade-card {
     display: grid;
     grid-template-columns: 180px minmax(0, 1fr);
     grid-template-areas: "media copy";
@@ -456,13 +473,13 @@ h1 {
     color: var(--text-dark);
 }
 
-.about-story--reverse {
+.cascade-card--reverse {
     align-self: flex-end;
     grid-template-columns: minmax(0, 1fr) 180px;
     grid-template-areas: "copy media";
 }
 
-.about-story-media {
+.cascade-card-media {
     grid-area: media;
     position: relative;
     display: grid;
@@ -475,14 +492,14 @@ h1 {
     color: var(--text);
 }
 
-.story-card-placeholder {
+.cascade-card-placeholder {
     padding: 0.75rem;
     font-size: 0.9rem;
     font-weight: 700;
     text-align: center;
 }
 
-.story-card-image {
+.cascade-card-image {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -490,18 +507,18 @@ h1 {
     object-fit: cover;
 }
 
-.about-story-copy {
+.cascade-card-copy {
     grid-area: copy;
     min-width: 0;
     align-self: center;
 }
 
-.story-card-title {
+.cascade-card-copy h3 {
     margin: 0 0 0.35rem;
     color: var(--text-dark);
 }
 
-.story-card-text {
+.cascade-card-copy > p:not(.eyebrow) {
     margin: 0 0 0.75rem;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
@@ -518,6 +535,10 @@ h1 {
 .work-page {
     display: grid;
     gap: 1.25rem;
+}
+
+.projects-other-work {
+    margin-top: 1.25rem;
 }
 
 .work-intro,
@@ -690,38 +711,38 @@ h1 {
         padding: 3rem 1.5rem;
     }
 
-    .about-content {
+    .page-feature {
         grid-template-columns: minmax(0, 1fr);
         justify-items: center;
         gap: 1.5rem;
         padding: 1.5rem;
     }
 
-    .about-photo {
+    .page-feature-image {
         width: min(100%, 320px);
         max-height: none;
     }
 
-    .about-copy {
+    .page-feature-copy {
         width: 100%;
     }
 
-    .about-stories {
+    .cascade-section {
         margin-top: 1.5rem;
     }
 
-    .about-story {
+    .cascade-card {
         grid-template-columns: 96px minmax(0, 1fr);
         gap: 0.75rem;
         width: 100%;
         padding: 0.75rem;
     }
 
-    .about-story--reverse {
+    .cascade-card--reverse {
         grid-template-columns: minmax(0, 1fr) 96px;
     }
 
-    .about-story-media {
+    .cascade-card-media {
         min-height: 96px;
     }
 
