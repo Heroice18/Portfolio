@@ -11,15 +11,51 @@
         <header th:replace="~{fragments :: site-header}"></header>
 
         <main class="page-content">
-            <section class="content-panel container content">
-                <h1>About Me</h1>
-                <p>
-                    I’m a developer focused on practical software, clear communication, and polished user experiences.
-                    This project is set up as a Spring Boot portfolio so it can be developed locally and published to GitHub Pages.
-                </p>
-                <p>
-                    The site uses a Spring Boot backend, Thymeleaf templates, and static assets that can be packaged for GitHub Pages hosting.
-                </p>
+            <section class="content-panel container about-content">
+                <img class="about-photo" th:src="@{/images/about-family.jpg}" alt="Brandon with his family outdoors." />
+                <div class="about-copy">
+                    <h1>About Me</h1>
+                    <p>
+                        Hiya! My name is Brandon Ison. I'm a senior software engineer, father, and leader and I love my life I've built for myself.
+                        I can't wait to learn more about you, in the meantime, here some fun facts about me!
+                    </p>
+                </div>
+            </section>
+
+            <section class="container about-stories" aria-labelledby="about-stories-title">
+                <div class="about-story-list">
+                    <article class="about-story content-panel">
+                        <div class="about-story-media">
+                            <img class="story-card-image" th:src="@{/images/about-married.jpg}"
+                                 alt="Temple grounds at sunset." />
+                        </div>
+                        <div class="about-story-copy">
+                            <h3 class="story-card-title">Family</h3>
+                            <p class="story-card-text">I've been married to my wife for over 5 years.</p>
+                        </div>
+                    </article>
+
+                    <article class="about-story about-story--reverse content-panel">
+                        <div class="about-story-media">
+                            <img class="story-card-image" th:src="@{/images/about-community.jpg}"
+                                 alt="Pokemon GO players gathered at a stadium event." />
+                        </div>
+                        <div class="about-story-copy">
+                            <h3 class="story-card-title">Community</h3>
+                            <p class="story-card-text">More fun facts coming soon.</p>
+                        </div>
+                    </article>
+
+                    <article class="about-story content-panel">
+                        <div class="about-story-media">
+                            <span class="story-card-placeholder">More photos coming soon</span>
+                        </div>
+                        <div class="about-story-copy">
+                            <h3 class="story-card-title">Hobbies</h3>
+                            <p class="story-card-text">More fun facts coming soon.</p>
+                        </div>
+                    </article>
+                </div>
             </section>
         </main>
 
